@@ -4,6 +4,15 @@
         <div class="users-container">
             <div *ngIf="users$ | async as users">
                 <div *ngIf="users.length > 0; else noUsersTemplate">
+                    <div
+                        style="width: 100%; display: flex; flex-direction: row-reverse; margin-bottom: 1rem; margin-top: 0.3rem;">
+                        <button mat-flat-button color="primary " (click)="handleGeneratePDFUsers()">
+                            Download users in PDF
+                        </button>
+                        <button mat-flat-button color="primary" (click)="handleGenerateExcelUsers()">
+                            Download users in Excel
+                        </button>
+                    </div>
                     <app-table-list [users]="users" />
                 </div>
                 <ng-template #noUsersTemplate>

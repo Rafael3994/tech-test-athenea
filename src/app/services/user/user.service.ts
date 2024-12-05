@@ -2,7 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { addAllUsers, addUser } from './ngrx/user.actions';
+import { addAllUsers } from './ngrx/user.actions';
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
+
 
 export interface IUser {
   name: string,
@@ -35,5 +38,22 @@ export class UserService {
         console.error('Error to charge users:', err);
       }
     });
+  }
+
+  generatePDF(usersToPrint: IUser[], title: string, headers: string[]): void {
+    const doc = new jsPDF();
+
+    doc.setFontSize(16);
+    doc.text(title, 20, 20);
+
+    const usersData = usersToPrint.map(user => [user.name, user.surname, user.email, user.id]);
+
+    (doc as any).autoTable({
+      head: [headers],
+      body: usersData,
+      startY: 30,
+    });
+
+    doc.save(`${title}.pdf`);
   }
 }
