@@ -6,7 +6,8 @@
                     <mat-icon>home</mat-icon>
                 </button>
             </a>
-            <h1 style="text-align: center;">{{title}}</h1>
+
+            <h1 style="margin-right: 3.5rem;">{{title}}</h1>
         </header>
         <div *ngIf="user !== null" style="margin-top: 0.5rem;">
             <app-card-user [user]="user"></app-card-user>
