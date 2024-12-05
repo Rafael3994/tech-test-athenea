@@ -1,1 +1,15 @@
-<p>details-user-page works!</p>
+<section class="container">
+    <div class="content">
+        <header class="header">
+            <a routerLink="/">
+                <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+                    <mat-icon>home</mat-icon>
+                </button>
+            </a>
+            <h1 style="text-align: center;">{{title}}</h1>
+        </header>
+        <div *ngIf="user !== null" style="margin-top: 0.5rem;">
+            <app-card-user [user]="user"></app-card-user>
+        </div>
+    </div>
+</section>

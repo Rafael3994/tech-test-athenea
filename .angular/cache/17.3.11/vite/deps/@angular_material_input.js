@@ -14,7 +14,8 @@ import {
   MatLabel,
   MatPrefix,
   MatSuffix
-} from "./chunk-VURRSH36.js";
+} from "./chunk-DM6SLEGP.js";
+import "./chunk-IXT5P5L6.js";
 import {
   ErrorStateMatcher,
   MatCommonModule,
@@ -26,7 +27,6 @@ import {
   getSupportedInputTypes,
   normalizePassiveListenerOptions
 } from "./chunk-H3JLDX57.js";
-import "./chunk-IXT5P5L6.js";
 import {
   DOCUMENT
 } from "./chunk-XLSINCXO.js";
