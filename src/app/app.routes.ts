@@ -7,4 +7,5 @@ export const routes: Routes = [
     { path: '', component: UserListPageComponent },
     { path: 'create-user', component: CreateUserPageComponent },
     { path: 'user-details', component: DetailsUserPageComponent },
+    { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
