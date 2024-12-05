@@ -1,0 +1,20 @@
+table {
+    width: 100%;
+}
+
+.mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+.table-container {
+    max-width: 100%;
+    overflow-x: auto;
+    margin-bottom: 10px;
+}
+
+th,
+td {
+    width: 25%;
+    white-space: nowrap;
+}

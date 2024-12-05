@@ -1,1 +1,15 @@
-<p>user-list-page works!</p>
+<section class="container">
+    <div class="content">
+        <h1>{{title}}</h1>
+        <div class="users-container">
+            <div *ngIf="users$ | async as users">
+                <div *ngIf="users.length > 0; else noUsersTemplate">
+                    <app-table-list [users]="users" />
+                </div>
+                <ng-template #noUsersTemplate>
+                    <p class="no-users-text">There aren't users</p>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</section>
