@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { addAllUsers } from './ngrx/user.actions';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
-
+import * as XLSX from 'xlsx';
 
 export interface IUser {
   name: string,
@@ -55,5 +55,14 @@ export class UserService {
     });
 
     doc.save(`${title}.pdf`);
+  }
+
+  generateExcel(users: IUser[], title: string) {
+    const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(users);
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, title);
+
+    XLSX.writeFile(wb, `${title}.xlsx`);
+
   }
 }

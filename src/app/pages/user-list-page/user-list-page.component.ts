@@ -26,6 +26,8 @@ export class UserListPageComponent {
     this.users$.subscribe(users => this.userService.generatePDF(users, this.title, ['Name', 'Surname', 'Email', 'DNI']));
   }
 
+
   handleGenerateExcelUsers(): void {
+    this.users$.subscribe(users => this.userService.generateExcel(users, this.title));
   }
 }
